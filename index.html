@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Terminal</title>
+    <style>
+        body { background: black; color: #0f0; font-family: monospace; padding: 20px; }
+        input { background: black; color: #0f0; border: none; outline: none; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <p>BIT-VAULT OS v1.0.4 - SECURE BOOT ENABLED</p>
+        <p>Type 'help' for commands...</p>
+        <p><span>$ </span><input type="text" id="commandInput" autofocus></p>
+    </div>
+    <script>
+        const input = document.getElementById('commandInput');
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                if(input.value === 'unlock-vault') {
+                    alert('Access Granted. Redirecting to Dashboard...');
+                } else {
+                    alert('Unauthorized access attempt logged.');
+                }
+                input.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
